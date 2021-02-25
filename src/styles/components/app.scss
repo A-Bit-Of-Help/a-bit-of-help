@@ -1,0 +1,16 @@
+@import "../main.scss";
+
+.app {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+    position: relative;
+    top: 0;
+    left: 0;
+    background: radial-gradient(
+        circle at 75% 100%,
+        rgba(47, 71, 167, 1) 36%,
+        rgba(0, 20, 52, 1) 80%
+    );
+}
