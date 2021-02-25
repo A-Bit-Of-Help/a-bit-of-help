@@ -1,10 +1,9 @@
 import * as React from "react";
-import Contributor from "./Contributor/Contributor";
+import Contributor from "./Contributor";
 import { useContributors } from "./useContributors";
 
 const Contributors = ({ contributors_url }) => {
     const { contributors } = useContributors(contributors_url);
-    console.log(contributors);
     return (
         <div className="contributors">
             {[...contributors].map((item) => (

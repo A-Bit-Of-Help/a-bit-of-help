@@ -1,5 +1,5 @@
 import * as React from "react";
-import { getContributors } from "../../../../api";
+import { getContributors } from "../../../api";
 
 export function useContributors(contributors_url) {
     const [contributors, setContributors] = React.useState("");

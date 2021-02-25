@@ -9,7 +9,7 @@ export function useGithubRepos() {
             setRepos(data);
         };
         getUserDetails();
-    }, []);
+    }, [setRepos]);
 
     return {
         repos,
