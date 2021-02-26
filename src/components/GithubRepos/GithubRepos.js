@@ -7,7 +7,7 @@ const GithubRepos = () => {
     const reposItems = [...repos].map((item) => (
         <RepoCompopnent key={item.id} repo={item} />
     ));
-    return <div>{reposItems}</div>;
+    return <div className="github__repos">{reposItems}</div>;
 };
 
 export default GithubRepos;

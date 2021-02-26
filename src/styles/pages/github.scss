@@ -1,45 +1,30 @@
 @import "../main.scss";
 
-.repo {
-    border: 1px solid #000;
-    width: 400px;
-    margin: 10px;
-
-    &__name {
-        margin: 3px;
-        font-size: 24px;
-        border-bottom: 1px solid #000;
-    }
+.github__repos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+    font-family: $font-base;
+    background-color: #444;
+    color: #fff;
 }
 
-.contributor {
+.repo {
     display: flex;
-    position: relative;
-    margin: 5px;
-    padding: 3px;
-    border-bottom: 1px solid #000;
-    &__link {
-        display: flex;
-        text-decoration: none;
-        color: #000;
-    }
-    &__avatar {
-        width: 30px;
-        height: 30px;
-        border-radius: 50%;
-        overflow: hidden;
-        img {
-            width: 100%;
-        }
-    }
+    flex-direction: column;
+    border: 2px solid #fff;
+    border-radius: 16px;
+    width: 80%;
+    min-width: 273px;
+    max-width: 1200px;
+    margin: 20px 0;
+
     &__name {
-        line-height: 30px;
-        margin: 0 5px;
-    }
-    &__commits {
-        flex-grow: 1;
-        margin: 0 5px;
-        text-align: right;
-        line-height: 30px;
+        padding: 10px;
+        overflow: hidden;
+        font-size: fontClamp(2, 5);
+        border-bottom: 2px solid #fff;
     }
 }
