@@ -26,7 +26,7 @@ const Contributor = ({ contributor }) => {
         };
     }, [popupRef]);
 
-    console.log(contributor);
+    // console.log(contributor);
 
     return (
         <div className="contributor" ref={popupRef}>
