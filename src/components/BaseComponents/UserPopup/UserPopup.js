@@ -1,42 +1,60 @@
 import * as React from "react";
-import "../../../styles/components/popup.scss";
+import UserPopupItem from "./UserPopupItem";
+import UserPopupLink from "./UserPopupLink";
 
-const UserPopup = ({ popup, setPopup, user }) => {
-    console.log(user);
+import "styles/components/popup.scss";
+
+const UserPopup = ({ popup, handleClick, user }) => {
+    const items = [
+        {
+            className: "popup__image",
+            children: (
+                <>
+                    <img
+                        src={user.avatar_url}
+                        alt={`${user.login} - user avatar`}
+                    />
+                    <div className="popup__login">{user.login}</div>
+                </>
+            ),
+        },
+        {
+            className: "popup__location",
+            children: user.location,
+        },
+        {
+            className: "popup__bio",
+            children: user.bio,
+        },
+        {
+            className: "popup__number__repos",
+            children: ` Public repositories: ${user.public_repos}`,
+        },
+    ];
+
+    const userItems = items.map((item) => (
+        <UserPopupItem key={item.className} className={item.className}>
+            {item.children}
+        </UserPopupItem>
+    ));
+
     return (
         <>
-            {popup ? (
+            {popup && (
                 <div className="popup">
-                    <div
+                    <UserPopupItem
                         className="popup__close"
-                        onClick={() => setPopup(false)}
+                        onClick={handleClick}
                     >
                         x
-                    </div>
-                    <div className="popup__container__left">
-                        <div className="popup__image">
-                            <img src={user.avatar_url} alt={user.login} />
-                            <div className="popup__login">{user.login}</div>
-                        </div>
-                        <div className="popup__location">{user.location}</div>
-                        <div className="popup__bio">{user.bio}</div>
-                        <div className="popup__number__repos">
-                            Public repositories: {user.public_repos}
-                        </div>
-                    </div>
+                    </UserPopupItem>
+                    <div className="popup__container__left">{userItems}</div>
                     <div className="popup__container__right">
-                        <a
-                            href={user.html_url}
-                            target="_blank"
-                            rel="noreferrer"
-                            className="popup__link"
-                        >
-                            Go to Github
-                        </a>
+                        <UserPopupLink href={user.html_url} />
                     </div>
-                    <div className="popup__arrow"></div>
+                    <UserPopupItem className="popup__arrow" />
                 </div>
-            ) : null}
+            )}
         </>
     );
 };

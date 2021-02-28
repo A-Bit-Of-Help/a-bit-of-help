@@ -1,13 +1,13 @@
 import React from "react";
 
-import Layout from "../components/layout";
+import Layout from "components/layout";
 
-import { aboutUsData } from "../db/about";
+import { aboutUsData } from "db/about";
 
-import background from "../assets/about/O-fundacji.png";
-import backgroundx2 from "../assets/about/O-fundacji@2x.png";
-import backgroundTeam from "../assets/about/TEAM_GRAFIKA.png"
-import backgroundTeamx2 from "../assets/about/TEAM_GRAFIKA@2x.png";
+import background from "assets/about/O-fundacji.png";
+import backgroundx2 from "assets/about/O-fundacji@2x.png";
+import backgroundTeam from "assets/about/TEAM_GRAFIKA.png";
+import backgroundTeamx2 from "assets/about/TEAM_GRAFIKA@2x.png";
 
 import "../styles/pages/about.scss";
 
@@ -34,10 +34,10 @@ const AboutUs = () => {
                     </ul>
                 </section>
                 <img
-                className="about__background"
-                srcSet={`${backgroundx2} 2x`}
-                src={background}
-                alt="About Us!"
+                    className="about__background"
+                    srcSet={`${backgroundx2} 2x`}
+                    src={background}
+                    alt="About Us!"
                 />
             </section>
             <div className="about__bottom--container">
@@ -61,10 +61,10 @@ const AboutUs = () => {
                         </ul>
                     </section>
                     <img
-                    className="about__background"
-                    srcSet={`${backgroundTeamx2} 2x`}
-                    src={backgroundTeam}
-                    alt="About Us!"
+                        className="about__background"
+                        srcSet={`${backgroundTeamx2} 2x`}
+                        src={backgroundTeam}
+                        alt="About Us!"
                     />
                 </section>
             </div>

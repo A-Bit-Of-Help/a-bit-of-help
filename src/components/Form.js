@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { createNewMail } from "../api/createNewMail";
+import { createNewMail } from "api/createNewMail";
 
-import "../styles/components/form.scss";
+import "styles/components/form.scss";
 
 const Form = ({
     data: { title, paragraphs, textareaPlaceholder, link },

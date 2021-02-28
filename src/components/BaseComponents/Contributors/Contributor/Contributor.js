@@ -1,12 +1,13 @@
 import * as React from "react";
+import UserPopout from "components/BaseComponents/UserPopup";
+import ContributorDetails from "./ContributorDetails";
 import { useContributor } from "./useContributor";
-import UserPopout from "../../UserPopup";
-import "../../../../styles/components/contributor.scss";
+import "styles/components/contributor.scss";
 
 const Contributor = ({ contributor }) => {
     const { user } = useContributor(contributor.author.url);
-
     const [popup, setPopup] = React.useState(false);
+
     const popupRef = React.useRef(null);
     let added = 0,
         deleted = 0;
@@ -17,7 +18,7 @@ const Contributor = ({ contributor }) => {
     React.useEffect(() => {
         function handleClickOutside(event) {
             if (popupRef.current && !popupRef.current.contains(event.target)) {
-                setPopup(false);
+                handleClickClose();
             }
         }
         document.addEventListener("mousedown", handleClickOutside);
@@ -26,31 +27,27 @@ const Contributor = ({ contributor }) => {
         };
     }, [popupRef]);
 
-    // console.log(contributor);
+    const handleClickOpen = React.useCallback(() => {
+        setPopup(true);
+    }, []);
+    const handleClickClose = React.useCallback(() => {
+        setPopup(false);
+    }, []);
 
     return (
         <div className="contributor" ref={popupRef}>
-            <div className="contributor__link" onClick={() => setPopup(true)}>
-                <div className="contributor__avatar">
-                    <img src={user.avatar_url} alt={user.name} />
-                </div>
-                <div className="contributor__container__name">
-                    <div className="contributor__name">{user.name}</div>
-                    <div className="contributor__login">{user.login}</div>
-                </div>
-            </div>
-            <div className="contributor__container__commits">
-                <div className="contributor__commits">
-                    {contributor.total > 1
-                        ? `${contributor.total} commits`
-                        : `${contributor.total} commit`}
-                </div>
-                <div className="contributor__lines">
-                    <div className="contributor__added">{added}++</div>
-                    <div className="contributor__deleted">{deleted}--</div>
-                </div>
-            </div>
-            <UserPopout popup={popup} setPopup={setPopup} user={user} />
+            <ContributorDetails
+                contributor={contributor}
+                user={user}
+                handleClick={handleClickOpen}
+                added={added}
+                deleted={deleted}
+            />
+            <UserPopout
+                popup={popup}
+                handleClick={handleClickClose}
+                user={user}
+            />
         </div>
     );
 };

@@ -1,10 +1,10 @@
 import React from "react";
 
-import Layout from "../components/layout";
-import ProjectCard from "../components/ProjectCard";
+import Layout from "components/layout";
+import ProjectCard from "components/ProjectCard";
 
-import { projectsData } from "../db/projects";
-import "../styles/pages/projects.scss";
+import { projectsData } from "db/projects";
+import "styles/pages/projects.scss";
 
 const projectsGrid = projectsData.projectsList.map((project) => (
     <ProjectCard project={project} key={project.photoAlt} />

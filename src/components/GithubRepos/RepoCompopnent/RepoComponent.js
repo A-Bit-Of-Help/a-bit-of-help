@@ -1,5 +1,5 @@
 import * as React from "react";
-import Contributors from "../../BaseComponents/Contributors";
+import Contributors from "components/BaseComponents/Contributors";
 
 const RepoComponent = ({ repo }) => {
     return (
