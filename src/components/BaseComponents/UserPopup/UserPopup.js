@@ -1,6 +1,6 @@
 import * as React from "react";
 import UserPopupItem from "./UserPopupItem";
-import UserPopupLink from "./UserPopupLink";
+import Link from "components/BaseComponents/Link";
 
 import "styles/components/popup.scss";
 
@@ -50,7 +50,14 @@ const UserPopup = ({ popup, handleClick, user }) => {
                     </UserPopupItem>
                     <div className="popup__container__left">{userItems}</div>
                     <div className="popup__container__right">
-                        <UserPopupLink href={user.html_url} />
+                        <Link
+                            href={user.html_url}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="popup__link"
+                        >
+                            Go to Github
+                        </Link>
                     </div>
                     <UserPopupItem className="popup__arrow" />
                 </div>
