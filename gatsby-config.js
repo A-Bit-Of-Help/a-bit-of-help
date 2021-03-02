@@ -28,6 +28,8 @@ module.exports = {
                 components: path.join(__dirname, "src/components"),
                 db: path.join(__dirname, "src/db"),
                 assets: path.join(__dirname, "src/assets"),
+                hooks: path.join(__dirname, "src/hooks"),
+                constans: path.join(__dirname, "src/constans"),
             },
         },
     ],

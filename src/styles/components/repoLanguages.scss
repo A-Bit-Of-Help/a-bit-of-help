@@ -15,7 +15,7 @@
         width: 50%;
         min-width: 200px;
         max-width: 400px;
-        height: 12px;
+        height: 10px;
         border-radius: 20px;
         background-color: #fff;
         div {
@@ -28,6 +28,7 @@
             background-color: cyan;
         }
         &__SCSS,
+        &__SASS,
         &__CSS {
             background-color: purple;
         }
@@ -37,7 +38,7 @@
     }
     &__language {
         display: flex;
-        margin: 0.4% 0;
+        margin: 0.5% 0;
         font-size: fontClamp(0.75, 1.5);
     }
     &__languageText {

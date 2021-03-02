@@ -1,6 +1,6 @@
 import * as React from "react";
 
-const ContributorDetails = ({ contributor, added, deleted }) => {
+const ContributorCommits = ({ contributor, added, deleted }) => {
     return (
         <div className="contributor__container__commits">
             <div className="contributor__commits">
@@ -16,4 +16,4 @@ const ContributorDetails = ({ contributor, added, deleted }) => {
     );
 };
 
-export default ContributorDetails;
+export default ContributorCommits;

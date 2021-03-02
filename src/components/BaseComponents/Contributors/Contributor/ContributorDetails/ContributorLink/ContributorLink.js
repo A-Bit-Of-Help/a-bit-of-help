@@ -1,6 +1,6 @@
 import * as React from "react";
 
-const ContributorDetails = ({ user, handleClick }) => {
+const ContributorLink = ({ user, handleClick }) => {
     return (
         <div className="contributor__link" onClick={handleClick}>
             <div className="contributor__avatar">
@@ -17,4 +17,4 @@ const ContributorDetails = ({ user, handleClick }) => {
     );
 };
 
-export default ContributorDetails;
+export default ContributorLink;

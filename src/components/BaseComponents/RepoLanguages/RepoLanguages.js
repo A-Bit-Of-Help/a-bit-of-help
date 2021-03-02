@@ -1,4 +1,6 @@
 import * as React from "react";
+import RepoLanguage from "./RepoLanguage";
+import RepoLanguagesBar from "./RepoLanguagesBar";
 import { useRepoLanguages } from "./useRepoLanguages";
 
 import "styles/components/repoLanguages.scss";
@@ -10,32 +12,25 @@ const RepoLanguages = ({ repoLanguagesUrl }) => {
         language: key,
         number: languages[key],
     }));
-    let langageNumber = 0;
+
+    let languageNumber = 0;
     languagesArray.forEach((item) => {
-        langageNumber += item.number;
+        languageNumber += item.number;
     });
+
     return (
         <div className="languages">
             <div className="languages__title"> Languages</div>
-            <div className="languages__bar">
-                {languagesArray.map((item) => (
-                    <div
-                        className={`languages__bar__${item.language}`}
-                        style={{
-                            width: `${(item.number / langageNumber) * 100}%`,
-                        }}
-                    ></div>
-                ))}
-            </div>
+            <RepoLanguagesBar
+                languagesArray={languagesArray}
+                languageNumber={languageNumber}
+            />
             {languagesArray.map((item) => (
-                <div className="languages__language">
-                    <div className="languages__languageText">
-                        {item.language}
-                    </div>
-                    <div className="languages__procents">
-                        {`${((item.number / langageNumber) * 100).toFixed(1)}%`}
-                    </div>
-                </div>
+                <RepoLanguage
+                    key={item.language}
+                    item={item}
+                    languageNumber={languageNumber}
+                />
             ))}
         </div>
     );
