@@ -31,6 +31,7 @@ const Contributor = ({ contributor }) => {
                 popup={open}
                 handleClick={handleClickClose}
                 user={user}
+                contributor={contributor}
             />
         </div>
     );

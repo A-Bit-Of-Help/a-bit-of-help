@@ -1,17 +1,20 @@
 import * as React from "react";
 
-const RepoLanguagesBar = ({ languagesArray, languageNumber }) => {
+const RepoLanguagesBar = ({ programingLanguages, languageNumber }) => {
     return (
         <div className="languages__bar">
-            {languagesArray.map((item) => (
-                <div
-                    key={item.language}
-                    className={`languages__bar__${item.language}`}
-                    style={{
-                        width: `${(item.number / languageNumber) * 100}%`,
-                    }}
-                />
-            ))}
+            {programingLanguages.map((item) => {
+                const percentOfLanguage = (item.number / languageNumber) * 100;
+                return (
+                    <div
+                        key={item.language}
+                        className={`languages__bar__${item.language}`}
+                        style={{
+                            width: `${percentOfLanguage}%`,
+                        }}
+                    />
+                );
+            })}
         </div>
     );
 };

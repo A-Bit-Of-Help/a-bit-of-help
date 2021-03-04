@@ -8,13 +8,13 @@ import "styles/components/repoLanguages.scss";
 const RepoLanguages = ({ repoLanguagesUrl }) => {
     const { languages } = useRepoLanguages(repoLanguagesUrl);
 
-    const languagesArray = Object.keys(languages).map((key) => ({
+    const programingLanguages = Object.keys(languages).map((key) => ({
         language: key,
         number: languages[key],
     }));
 
     let languageNumber = 0;
-    languagesArray.forEach((item) => {
+    programingLanguages.forEach((item) => {
         languageNumber += item.number;
     });
 
@@ -22,10 +22,10 @@ const RepoLanguages = ({ repoLanguagesUrl }) => {
         <div className="languages">
             <div className="languages__title"> Languages</div>
             <RepoLanguagesBar
-                languagesArray={languagesArray}
+                programingLanguages={programingLanguages}
                 languageNumber={languageNumber}
             />
-            {languagesArray.map((item) => (
+            {programingLanguages.map((item) => (
                 <RepoLanguage
                     key={item.language}
                     item={item}

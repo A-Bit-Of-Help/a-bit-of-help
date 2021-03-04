@@ -5,11 +5,11 @@ export function useOpenClose() {
 
     const handleClickOpen = React.useCallback(() => {
         setOpen(true);
-    }, []);
+    }, [setOpen]);
 
     const handleClickClose = React.useCallback(() => {
         setOpen(false);
-    }, []);
+    }, [setOpen]);
 
     return { handleClickOpen, handleClickClose, open };
 }

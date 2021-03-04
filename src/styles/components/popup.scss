@@ -2,6 +2,7 @@
 
 .popup {
     display: flex;
+    flex-wrap: wrap;
     min-width: 260px;
     position: absolute;
     padding: 2%;
@@ -60,7 +61,8 @@
     &__link:hover {
         background-color: #1e951e;
     }
-    &__number__repos {
+    &__chart {
+        flex-basis: 100%;
     }
     &__arrow {
         position: absolute;
