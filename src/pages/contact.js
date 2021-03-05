@@ -1,13 +1,13 @@
 import React from "react";
 
-import Layout from "../components/layout";
-import Form from "../components/Form";
+import Layout from "components/layout";
+import Form from "components/Form";
 
-import { contactData } from "../db/contact";
+import { contactData } from "db/contact";
 
-import background from "../assets/contact/contact_bcg.png";
-import backgroundx2 from "../assets/contact/contact_bcg@2x.png";
-import "../styles/pages/contact.scss";
+import background from "assets/contact/contact_bcg.png";
+import backgroundx2 from "assets/contact/contact_bcg@2x.png";
+import "styles/pages/contact.scss";
 
 const Contact = () => (
     <Layout>

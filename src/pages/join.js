@@ -1,13 +1,13 @@
 import React from "react";
 
-import Layout from "../components/layout";
-import Form from "../components/Form";
+import Layout from "components/layout";
+import Form from "components/Form";
 
-import { joinData } from "../db/join";
+import { joinData } from "db/join";
 
-import background from "../assets/join/join_bcg.png";
-import backgroundx2 from "../assets/join/join_bcg@2x.png";
-import "../styles/pages/join.scss";
+import background from "assets/join/join_bcg.png";
+import backgroundx2 from "assets/join/join_bcg@2x.png";
+import "styles/pages/join.scss";
 
 const Join = () => (
     <Layout>

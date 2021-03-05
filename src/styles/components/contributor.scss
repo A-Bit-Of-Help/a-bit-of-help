@@ -1,0 +1,65 @@
+@import "../main.scss";
+
+.contributor {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    width: 48%;
+    margin: 1%;
+    min-width: 260px;
+    padding: 1%;
+    line-height: 260%;
+    &__link {
+        display: flex;
+        cursor: pointer;
+    }
+    &__container__commits {
+        text-align: right;
+        min-width: 40%;
+        height: 10vw;
+        max-height: 160px;
+        min-height: 80px;
+    }
+    &__commits {
+        font-size: fontClamp(1, 2);
+    }
+    &__lines {
+        display: flex;
+        justify-content: flex-end;
+        font-size: fontClamp(0.8, 1.6);
+    }
+    &__added {
+        margin: 0 3px;
+        color: #22ac22;
+    }
+    &__deleted {
+        margin: 0 3px;
+        color: red;
+    }
+    &__avatar {
+        margin-right: 5%;
+        img {
+            width: 10vw;
+            height: 10vw;
+            min-width: 80px;
+            min-height: 80px;
+            max-width: 140px;
+            max-height: 140px;
+            border-radius: 50%;
+        }
+    }
+    &__name {
+        font-size: fontClamp($font-main-subtitle-min, $font-main-subtitle-max);
+    }
+    &__login {
+        color: #aaa;
+        font-size: fontClamp(0.9, 1.8);
+    }
+}
+
+@media (max-width: 1024px) {
+    .contributor {
+        width: 96%;
+    }
+}

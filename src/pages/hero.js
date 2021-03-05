@@ -1,6 +1,6 @@
 import React from "react";
 
-import "../styles/pages/hero.scss";
+import "styles/pages/hero.scss";
 
 const Hero = () => (
     <main className="container">
