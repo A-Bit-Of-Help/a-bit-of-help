@@ -28,4 +28,11 @@
         font-size: fontClamp(2, 5);
         border-bottom: 2px solid #fff;
     }
+    &__wraper {
+        display: flex;
+    }
+    &__chart {
+        flex-grow: 1;
+        margin-right: 20px;
+    }
 }
