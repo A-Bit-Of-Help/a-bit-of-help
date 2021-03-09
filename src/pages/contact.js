@@ -1,7 +1,7 @@
 import React from "react";
 
-import Layout from "components/layout";
-import Form from "components/Form";
+import Layout from "components/Layout";
+import Form from "components/FormContainer";
 
 import { contactData } from "db/contact";
 
