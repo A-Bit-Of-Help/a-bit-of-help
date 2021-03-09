@@ -2,11 +2,12 @@ import * as React from "react";
 import RepoLanguage from "./RepoLanguage";
 import RepoLanguagesBar from "./RepoLanguagesBar";
 import { useRepoLanguages } from "./useRepoLanguages";
+import Loading from "components/BaseComponents/Loading";
 
 import "styles/components/repoLanguages.scss";
 
 const RepoLanguages = ({ repoLanguagesUrl }) => {
-    const { languages } = useRepoLanguages(repoLanguagesUrl);
+    const { loadingPage, languages } = useRepoLanguages(repoLanguagesUrl);
 
     const programingLanguages = Object.keys(languages).map((key) => ({
         language: key,
@@ -18,7 +19,9 @@ const RepoLanguages = ({ repoLanguagesUrl }) => {
         languageNumber += item.number;
     });
 
-    return (
+    return loadingPage ? (
+        <Loading />
+    ) : (
         <div className="languages">
             <div className="languages__title"> Languages</div>
             <RepoLanguagesBar

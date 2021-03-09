@@ -4,9 +4,10 @@ import ContributorDetails from "./ContributorDetails";
 import { useContributor } from "./useContributor";
 import "styles/components/contributor.scss";
 import { useOpenClose, useCloseWindow } from "hooks";
+import Loading from "components/BaseComponents/Loading";
 
 const Contributor = ({ contributor }) => {
-    const { user } = useContributor(contributor.author.url);
+    const { loadingPage, user } = useContributor(contributor.author.url);
     const { handleClickClose, handleClickOpen, open } = useOpenClose();
     const { popupRef } = useCloseWindow(handleClickClose);
 
@@ -18,7 +19,9 @@ const Contributor = ({ contributor }) => {
         deleted += element.d;
     });
 
-    return (
+    return loadingPage ? (
+        <Loading />
+    ) : (
         <div className="contributor" ref={popupRef}>
             <ContributorDetails
                 contributor={contributor}
