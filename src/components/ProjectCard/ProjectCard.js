@@ -1,7 +1,7 @@
 import React from "react";
 
-const ProjectCard = (props) => {
-    const { photo, photoAlt, title, description } = props.project;
+const ProjectCard = ({ project }) => {
+    const { photo, photoAlt, title, description } = project;
 
     return (
         <div className="projects__project-card">

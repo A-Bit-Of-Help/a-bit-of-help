@@ -1,5 +1,6 @@
 import React from "react";
 
+import { Link } from "gatsby";
 import { linksArray } from "db/footer";
 
 import "styles/components/footer.scss";
@@ -8,9 +9,9 @@ import logoFooter from "assets/logoFooter.svg";
 const Footer = () => (
     <footer>
         <div className="container footer">
-            <a href="/">
+            <Link to="/">
                 <img src={logoFooter} alt={"logo-footer"} />
-            </a>
+            </Link>
             <ul>
                 {linksArray.map((element) => (
                     <li key={element.slice(0, 33)}>{element}</li>
