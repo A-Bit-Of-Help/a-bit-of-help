@@ -1,14 +1,14 @@
 import * as React from "react";
 import classNames from "classnames/bind";
 
-const Button = ({ className, isSubmitting }) => {
+const Button = ({ className, isSubmitting, text }) => {
     return (
         <button
             className={classNames("form__btn", className)}
-            data-btn={isSubmitting ? "wysyłanie..." : "wyślij"}
+            data-btn={text}
             disabled={isSubmitting}
         >
-            {isSubmitting ? "wysyłanie..." : "wyślij"}
+            {text}
         </button>
     );
 };

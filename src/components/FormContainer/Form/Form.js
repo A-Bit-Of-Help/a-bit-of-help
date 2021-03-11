@@ -11,12 +11,11 @@ const Form = ({ className, textareaPlaceholder }) => {
         email: "",
         message: "",
     });
-    const handleSubmit = (event) => {
-        event.preventDefault();
+    const handleSubmit = React.useCallback(() => {
         if (isSubmitting) return;
 
         setIsSubmiting(true);
-    };
+    }, [setIsSubmiting]);
 
     return (
         <form
@@ -43,7 +42,10 @@ const Form = ({ className, textareaPlaceholder }) => {
                 inputsValue={inputsValue}
                 setInputsValue={setInputsValue}
             />
-            <Button isSubmitting={isSubmitting} />
+            <Button
+                isSubmitting={isSubmitting}
+                text={isSubmitting ? "wysyłanie..." : "wyślij"}
+            />
         </form>
     );
 };

@@ -10,9 +10,12 @@ const Input = ({
     inputsValue,
     setInputsValue,
 }) => {
-    const handleInputChangeValue = (event) => {
-        setInputsValue({ ...inputsValue, [name]: event.target.value });
-    };
+    const handleInputChangeValue = React.useCallback(
+        (event) => {
+            setInputsValue({ ...inputsValue, [name]: event.target.value });
+        },
+        [setInputsValue]
+    );
 
     return (
         <input

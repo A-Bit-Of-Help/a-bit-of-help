@@ -1,8 +1,9 @@
 import * as React from "react";
 
 const ContributorCommits = ({ contributor, added, deleted }) => {
-    const addedMax = added < 99999 ? added : 99999;
-    const deletedMax = deleted < 99999 ? deleted : 99999;
+    const MAX_COMMITS = 9999;
+    const addedMax = added < MAX_COMMITS ? added : MAX_COMMITS;
+    const deletedMax = deleted < MAX_COMMITS ? deleted : MAX_COMMITS;
     return (
         <div className="contributor__container__commits">
             <div className="contributor__commits">
