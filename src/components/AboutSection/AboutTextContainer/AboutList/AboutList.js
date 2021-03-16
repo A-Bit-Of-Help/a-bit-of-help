@@ -1,12 +1,11 @@
 import React from "react";
-import { aboutUsData } from "db/about";
 import classNames from "classnames/bind";
 
-const AboutList = ({ className, sectionName }) => (
+const AboutList = ({ className, list }) => (
     <ul className="about__list">
-        {aboutUsData[sectionName].map((item, index) => (
+        {list.map((item, index) => (
             <li
-                key={index}
+                key={`${index}${item.slice(0, 33)}`}
                 className={classNames("about__paragraph", className)}
             >
                 {item}

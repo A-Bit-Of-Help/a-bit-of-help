@@ -1,10 +1,10 @@
 import * as React from "react";
-import classNames from "classnames/bind";
 import Input from "./Input";
 import Textarea from "./Textarea";
 import Button from "./Button";
+import Form from "./Form";
 
-const Form = ({ className, textareaPlaceholder }) => {
+const FormBox = ({ textareaPlaceholder }) => {
     const [isSubmitting, setIsSubmiting] = React.useState(false);
     const [inputsValue, setInputsValue] = React.useState({
         name: "",
@@ -18,11 +18,7 @@ const Form = ({ className, textareaPlaceholder }) => {
     }, [setIsSubmiting]);
 
     return (
-        <form
-            action="#"
-            className={classNames("form__form", className)}
-            onSubmit={handleSubmit}
-        >
+        <Form handleSubmit={handleSubmit}>
             <Input
                 name="name"
                 placeholder="Imię"
@@ -46,8 +42,8 @@ const Form = ({ className, textareaPlaceholder }) => {
                 isSubmitting={isSubmitting}
                 text={isSubmitting ? "wysyłanie..." : "wyślij"}
             />
-        </form>
+        </Form>
     );
 };
 
-export default Form;
+export default FormBox;

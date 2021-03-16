@@ -11,7 +11,7 @@ const AboutTextContainer = ({ data }) => {
         subtitleClass,
         subtitleText,
         listClass,
-        sectionName,
+        list,
     } = data;
     return (
         <section className="text">
@@ -21,7 +21,7 @@ const AboutTextContainer = ({ data }) => {
                 spanText={titleSpanText}
             />
             <AboutSubtitle className={subtitleClass} text={subtitleText} />
-            <AboutList className={listClass} sectionName={sectionName} />
+            <AboutList className={listClass} list={list} />
         </section>
     );
 };

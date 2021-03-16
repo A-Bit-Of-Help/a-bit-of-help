@@ -1,3 +1,5 @@
+import { defaultCommitValue } from "constans";
+
 export function useConvertingRepoChartData(contributors) {
     let repoCommits = [];
     [...contributors].forEach((item, index) => {
@@ -8,10 +10,10 @@ export function useConvertingRepoChartData(contributors) {
                 c: weeksItem.c,
             };
         });
-        if (index === 0) {
+        if (index === defaultCommitValue) {
             repoCommits = numberOfRepoCommits.map((item) => ({
                 w: item.w,
-                c: 0,
+                c: defaultCommitValue,
             }));
         }
         repoCommits.forEach((itemRepo, indexRepo) => {

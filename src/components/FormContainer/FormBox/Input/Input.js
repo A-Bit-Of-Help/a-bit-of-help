@@ -1,5 +1,6 @@
 import * as React from "react";
 import classNames from "classnames/bind";
+import { changeInputValue } from "../useChangeInputValue";
 
 const Input = ({
     className,
@@ -10,11 +11,9 @@ const Input = ({
     inputsValue,
     setInputsValue,
 }) => {
-    const handleInputChangeValue = React.useCallback(
-        (event) => {
-            setInputsValue({ ...inputsValue, [name]: event.target.value });
-        },
-        [setInputsValue]
+    const handleChange = React.useCallback(
+        changeInputValue(name, inputsValue, setInputsValue),
+        [inputsValue]
     );
 
     return (
@@ -25,7 +24,7 @@ const Input = ({
             placeholder={placeholder}
             minLength={minLength}
             value={inputsValue[name]}
-            onChange={handleInputChangeValue}
+            onChange={handleChange}
             required
         />
     );

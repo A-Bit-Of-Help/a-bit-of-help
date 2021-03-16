@@ -27,6 +27,7 @@ module.exports = {
                 styles: path.join(__dirname, "src/styles"),
                 components: path.join(__dirname, "src/components"),
                 db: path.join(__dirname, "src/db"),
+                data: path.join(__dirname, "src/data"),
                 assets: path.join(__dirname, "src/assets"),
                 hooks: path.join(__dirname, "src/hooks"),
                 constans: path.join(__dirname, "src/constans"),

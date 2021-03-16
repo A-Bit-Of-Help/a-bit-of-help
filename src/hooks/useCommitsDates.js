@@ -1,11 +1,16 @@
+import { monthSupplement, dataDisplayCondition } from "constans";
+
 export function useCommitsDates(commits) {
     const dates = [...commits].map((item) => {
         const date = new Date(item.w * 1000);
-        const day = date.getDate() > 9 ? date.getDate() : `0${date.getDate()}`;
+        const day =
+            date.getDate() > dataDisplayCondition
+                ? date.getDate()
+                : `0${date.getDate()}`;
         const month =
-            date.getMonth() + 1 > 9
-                ? date.getMonth() + 1
-                : `0${date.getMonth() + 1}`;
+            date.getMonth() + monthSupplement > dataDisplayCondition
+                ? date.getMonth() + monthSupplement
+                : `0${date.getMonth() + monthSupplement}`;
         return `${day}-${month}`;
     });
 

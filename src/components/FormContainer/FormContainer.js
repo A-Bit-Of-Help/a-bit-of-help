@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { createNewMail } from "api/createNewMail";
 
-import Form from "./Form";
+import FormBox from "./FormBox";
 
 import "styles/components/form.scss";
 import FormParagraph from "./FormParagraph";
-import Link from "components/BaseComponents/Link/Link";
+import Link from "components/BaseComponents/Link";
 
 const FormContainer = ({
     data: { title, paragraphs, textareaPlaceholder, link },
@@ -15,7 +15,7 @@ const FormContainer = ({
         <div className="form">
             <h1 className="form__title">{title}</h1>
             <FormParagraph paragraphs={paragraphs} />
-            <Form textareaPlaceholder={textareaPlaceholder} />
+            <FormBox textareaPlaceholder={textareaPlaceholder} />
             {link && (
                 <Link href={link.path} className="form__link">
                     {link.content}

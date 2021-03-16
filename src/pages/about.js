@@ -10,19 +10,19 @@ import backgroundTeamx2 from "assets/about/TEAM_GRAFIKA@2x.png";
 import "styles/pages/about.scss";
 import AboutSection from "components/AboutSection";
 
-import { aboutUs } from "constans";
+import { about } from "data";
 
 const AboutUs = () => {
     return (
         <Layout>
             <AboutSection
-                data={aboutUs.top}
+                data={about.top}
                 src={background}
                 srcSet={backgroundx2}
             />
             <div className="about__bottom--container">
                 <AboutSection
-                    data={aboutUs.bottom}
+                    data={about.bottom}
                     src={backgroundTeam}
                     srcSet={backgroundTeamx2}
                 />
