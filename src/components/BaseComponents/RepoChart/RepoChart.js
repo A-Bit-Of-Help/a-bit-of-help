@@ -1,9 +1,9 @@
 import * as React from "react";
 import { Line } from "react-chartjs-2";
 
-import Loading from "components/BaseComponents/Loading";
+import Loader from "components/BaseComponents/Loader";
 
-import { userData, userOptions } from "constans";
+import { userData, userOptions } from "constants";
 import { useCommitsDates, useConvertingRepoChartData } from "hooks";
 import { useContributors } from "./useRepoChart";
 
@@ -14,11 +14,13 @@ const RepoChart = ({ contributors_url }) => {
     const commitsWeekDates = useCommitsDates(repoCommits);
     const data = userData(NumberOfcommits, commitsWeekDates);
 
-    return loadingPage ? (
-        <Loading />
-    ) : (
+    return (
         <div className="repo__chart">
-            <Line data={data} options={userOptions} />
+            {loadingPage ? (
+                <Loader className="medium" />
+            ) : (
+                <Line data={data} options={userOptions} />
+            )}
         </div>
     );
 };

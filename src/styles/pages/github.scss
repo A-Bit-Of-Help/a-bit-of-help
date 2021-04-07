@@ -12,6 +12,12 @@
     color: #fff;
 }
 
+.github__repos--loading {
+    display: block;
+    padding: 0;
+    height: 100vh;
+}
+
 .repo {
     display: flex;
     flex-direction: column;

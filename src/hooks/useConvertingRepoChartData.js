@@ -1,4 +1,4 @@
-import { defaultCommitValue } from "constans";
+import { defaultCommitValue } from "constants";
 
 export function useConvertingRepoChartData(contributors) {
     let repoCommits = [];

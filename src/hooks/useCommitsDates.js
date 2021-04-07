@@ -1,4 +1,4 @@
-import { monthSupplement, dataDisplayCondition } from "constans";
+import { monthSupplement, dataDisplayCondition } from "constants";
 
 export function useCommitsDates(commits) {
     const dates = [...commits].map((item) => {

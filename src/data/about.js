@@ -1,4 +1,4 @@
-export const about = {
+export const aboutData = {
     top: {
         sectionClass: "about--puzzle",
         titleClass: "about__title--top",

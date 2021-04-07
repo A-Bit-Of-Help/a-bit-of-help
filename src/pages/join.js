@@ -3,7 +3,7 @@ import React from "react";
 import Layout from "components/Layout";
 import FormContainer from "components/FormContainer";
 
-import { joinData } from "db/join";
+import { joinData } from "data";
 
 import background from "assets/join/join_bcg.png";
 import backgroundx2 from "assets/join/join_bcg@2x.png";

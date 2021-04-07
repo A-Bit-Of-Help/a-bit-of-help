@@ -1,18 +1,24 @@
 import * as React from "react";
 import { useGithubRepos } from "./useGithubRepos";
 import RepoCompopnent from "./RepoCompopnent";
-import Loading from "components/BaseComponents/Loading/Loading";
+import Loader from "components/BaseComponents/Loader";
 
 const GithubRepos = () => {
     const { loadingPage, repos } = useGithubRepos();
 
-    return loadingPage ? (
-        <Loading />
-    ) : (
-        <div className="github__repos">
-            {[...repos].map((item) => (
-                <RepoCompopnent key={item.id} repo={item} />
-            ))}
+    return (
+        <div
+            className={`github__repos ${
+                loadingPage ? "github__repos--loading" : ""
+            }`}
+        >
+            {loadingPage ? (
+                <Loader className="large" />
+            ) : (
+                [...repos].map((item) => (
+                    <RepoCompopnent key={item.id} repo={item} />
+                ))
+            )}
         </div>
     );
 };

@@ -5,7 +5,7 @@ const ContributorCommits = ({ contributor, added, deleted }) => {
     const addedMax = added < MAX_COMMITS ? added : MAX_COMMITS;
     const deletedMax = deleted < MAX_COMMITS ? deleted : MAX_COMMITS;
     return (
-        <div className="contributor__container__commits">
+        <div className="contributor__container--commits">
             <div className="contributor__commits">
                 {contributor.total > 1
                     ? `${contributor.total} commits`

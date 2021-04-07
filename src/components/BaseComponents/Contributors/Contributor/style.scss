@@ -1,0 +1,16 @@
+.contributor {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    width: 48%;
+    margin: 1%;
+    min-width: 260px;
+    padding: 1%;
+    line-height: 260%;
+}
+@media (max-width: 1024px) {
+    .contributor {
+        width: 96%;
+    }
+}

@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import { createNewMail } from "api/createNewMail";
+import * as React from "react";
 
 import FormBox from "./FormBox";
 

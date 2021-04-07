@@ -1,6 +1,6 @@
 import React from "react";
 
-import { navNames } from "db/nav";
+import { navData } from "data";
 
 import "styles/components/nav.scss";
 import NavLink from "./NavLink";
@@ -8,7 +8,7 @@ import NavLink from "./NavLink";
 const Nav = () => (
     <nav className="nav__container">
         <ul className="nav__list">
-            {navNames.map((item) => (
+            {navData.map((item) => (
                 <NavLink key={item.text} item={item} />
             ))}
         </ul>

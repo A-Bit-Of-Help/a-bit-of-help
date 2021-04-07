@@ -30,7 +30,7 @@ module.exports = {
                 data: path.join(__dirname, "src/data"),
                 assets: path.join(__dirname, "src/assets"),
                 hooks: path.join(__dirname, "src/hooks"),
-                constans: path.join(__dirname, "src/constans"),
+                constants: path.join(__dirname, "src/constants"),
             },
         },
     ],

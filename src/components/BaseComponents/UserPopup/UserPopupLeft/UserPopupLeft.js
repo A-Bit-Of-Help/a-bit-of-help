@@ -1,7 +1,7 @@
 import * as React from "react";
 import UserPopupItem from "../UserPopupItem";
 import Avatar from "components/BaseComponents/Avatar";
-import { popupItems } from "constans";
+import { popupItems } from "constants";
 
 import "styles/components/popup.scss";
 
