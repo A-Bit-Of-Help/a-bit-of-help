@@ -12,6 +12,12 @@
     color: #fff;
 }
 
+.github__repos--loading {
+    display: block;
+    padding: 0;
+    height: 100vh;
+}
+
 .repo {
     display: flex;
     flex-direction: column;
@@ -27,5 +33,12 @@
         overflow: hidden;
         font-size: fontClamp(2, 5);
         border-bottom: 2px solid #fff;
+    }
+    &__wraper {
+        display: flex;
+    }
+    &__chart {
+        flex-grow: 1;
+        margin-right: 20px;
     }
 }

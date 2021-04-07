@@ -1,19 +1,12 @@
 import * as React from "react";
 import { Line } from "react-chartjs-2";
+import { useCommitsDates } from "hooks";
 
-import { userData, userOptions } from "constans";
+import { userData, userOptions } from "constants";
 
 const UserChart = ({ userCommits }) => {
     const NumberOfcommits = userCommits.map((item) => item.c);
-    const commitsWeekDates = userCommits.map((item) => {
-        const date = new Date(item.w * 1000);
-        return `${date.getDate() > 9 ? date.getDate() : `0${date.getDate()}`}-${
-            date.getMonth() + 1 > 9
-                ? date.getMonth() + 1
-                : `0${date.getMonth() + 1}`
-        }`;
-    });
-
+    const commitsWeekDates = useCommitsDates(userCommits);
     const data = userData(NumberOfcommits, commitsWeekDates);
 
     return (

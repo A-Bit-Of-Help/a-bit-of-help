@@ -1,13 +1,13 @@
 import React from "react";
 
-import Layout from "../components/layout";
-import Hero from "./hero";
+import Layout from "components/Layout";
+import Hero from "components/Hero";
 
 import "styles/components/app.scss";
 
 const App = () => (
     <Layout>
-        <Hero path="/" />
+        <Hero />
     </Layout>
 );
 
